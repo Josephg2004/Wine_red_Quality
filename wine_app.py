@@ -5,17 +5,17 @@ import joblib
 import sklearn
 
 
-obj=joblib.load('California.joblib')
+obj=joblib.load('winequality_re.pkl')
 model=obj['model']
 col=obj['columns']
 
-st.title('California app')
+st.title('Wine_red_quality')
 In=[]
 for i in col:
     v=st.number_input(f'Enter {i} value=')
     In.append(v)
 if st.button('click'):
     out=model.predict([In])  
-    st.success(f'The median House value is :{out}')
+    st.success(f'The wine_red_quality is__ :{out}')
 
 # python -m ven ml_linear
